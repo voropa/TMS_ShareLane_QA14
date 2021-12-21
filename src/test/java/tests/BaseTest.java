@@ -14,11 +14,9 @@ public abstract class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
 
-
-    @Parameters ({"browser"})
     @BeforeClass(description = "Open browser", alwaysRun = true)
-    public void setUp(ITestContext testContext, @Optional("chrome") String browser) {
-        System.getProperty("browser");
+    public void setUp(ITestContext testContext) {
+        String browser = System.getProperty("browser");
         driver =  DriverFactory.getDriver(browser);
         testContext.setAttribute("driver", driver);
         driver.manage().window().maximize();

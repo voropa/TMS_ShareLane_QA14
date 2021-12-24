@@ -17,7 +17,7 @@ public class ProductsPageTest extends BaseProductsTest {
     public void verifySauceLabsBackpackInfo() {
         productName = "Sauce Labs Backpack";
         expectedProductPrice = "29.99$";
-        loginPage.login(USERNAME,PASSWORD);
+        loginPage.login(username,password);
         Assert.assertEquals(productsPage.getProductPrice(productName), expectedProductPrice);
         Assert.assertEquals(productsPage.getProductDescription(productName), "2esfsdfdfsdfdfdsfdsf");
     }
@@ -25,7 +25,7 @@ public class ProductsPageTest extends BaseProductsTest {
     @Test (description = "Products Count test", groups = {"Smoke"})
     public void verifyProductsCount() {
         productName = "Sauce labs bike light";
-        loginPage.login(USERNAME,PASSWORD);
+        loginPage.login(username,password);
         Assert.assertEquals(productsPage.getProductsCount(), EXPECTED_PRODUCTS_COUNT);
     }
 
@@ -35,7 +35,7 @@ public class ProductsPageTest extends BaseProductsTest {
         loginPage.open();
         boolean isLoginPageOpened = loginPage.isPageOpened();
         Assert.assertTrue(isLoginPageOpened, "Login page should be opened");
-        loginPage.login(USERNAME, PASSWORD);
+        loginPage.login(username, password);
         Assert.assertTrue(productsPage.isPageOpened(), "Products page should be opened");
         productsPage.clickAddToCartButton(productName);
     }

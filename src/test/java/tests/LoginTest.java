@@ -16,7 +16,7 @@ public class LoginTest extends BaseTest {
     @Test (description = "Description for Login positive test", groups = {"Smoke", "Positive"})
     @Description("Additional test description")
     public void loginPositiveTest() {
-        boolean isLoggedIn = loginPage.login(USERNAME, PASSWORD).isPageOpened();
+        boolean isLoggedIn = loginPage.login(username, password).isPageOpened();
         Assert.assertTrue(isLoggedIn);
     }
 
